@@ -9,11 +9,19 @@ class LeaveRequest extends Model
 {
     protected $fillable = [
         'user_id',
+        'type',
         'start_date',
         'end_date',
+        'total_days',
         'reason',
         'status',
+        'manager_note',
         'approved_by'
+    ];
+
+    protected $casts = [
+        'start_date' => 'date',
+        'end_date' => 'date',
     ];
 
     public function user(): BelongsTo
